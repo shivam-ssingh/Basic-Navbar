@@ -1,0 +1,78 @@
+/* styles.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.nav-header {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: sticky; /* Make the navbar sticky */
+  top: 0; /* Stick to the top of the viewport */
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.nav-header .logo {
+  font-size: 1.5rem;
+}
+
+.nav-header ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.nav-header ul li {
+  margin-left: 20px;
+}
+
+.nav-header ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-header ul li a:hover {
+  color: #04aa6d; /* Change color on hover */
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  display: none; /* Hidden by default */
+}
+
+#check {
+  display: none; /* Hide checkbox */
+}
+
+@media (max-width: 768px) {
+  .nav-header ul {
+    position: fixed;
+    right: -100%;
+    top: 60px; /* Position below the navbar */
+    background-color: #333;
+    height: 100vh; /* Full height */
+    width: 100%; /* Full width */
+    flex-direction: column; /* Stack vertically */
+    align-items: center; /* Center items */
+    transition: right 0.3s ease; /* Smooth transition */
+  }
+
+  .nav-header ul li {
+    margin-top: 20px; /* Space between items */
+    margin-left: 0; /* Reset left margin */
+  }
+
+  .checkbtn {
+    display: block; /* Show hamburger icon */
+  }
+
+  #check:checked ~ ul {
+    right: 0; /* Show menu when checked */
+  }
+}
